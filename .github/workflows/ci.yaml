@@ -44,7 +44,7 @@ jobs:
       strategy:
          fail-fast: false
       runs-on: ubuntu-latest
-      container: registry.fedoraproject.org/fedora-minimal:43
+      container: registry.fedoraproject.org/fedora-minimal:44
       steps:
          - uses: actions/checkout@v1
          - name: Prepare container
