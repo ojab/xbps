@@ -3,6 +3,7 @@ on:
   pull_request:
   push:
     branches:
+      - 'fanalyzer'
       - 'master'
       - 'ci-**'
 
@@ -37,6 +38,7 @@ jobs:
               CC: ${{ matrix.c_compiler }}
            run: |
               ./configure --enable-tests
+              echo "CFLAGS +=         -fanalyzer" >> config.mk
               make -j
          - name: Check
            run: make check
@@ -57,6 +59,7 @@ jobs:
               CC: ${{ matrix.c_compiler }}
            run: |
               ./configure --enable-tests
+              echo "CFLAGS +=         -fanalyzer" >> config.mk
               make -j
          - name: Check
            run: make check
